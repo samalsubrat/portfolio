@@ -5,7 +5,7 @@ import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 export async function AnimatedShinyTextDemo() {
   return (
-    <div className="z-10 flex py-4 items-center justify-center">
+    <div className="z-10 flex pb-2 sm:py-4 items-center justify-center">
       <div
         className={cn(
           "group rounded-full border  transition-all ease-in hover:cursor-pointer border-white/5 bg-[#11283d] hover:bg-[#0a1724]",
