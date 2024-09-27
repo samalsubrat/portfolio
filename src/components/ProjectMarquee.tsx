@@ -12,7 +12,7 @@ const ProjectMarquee = () => {
 
 
   return (
-    <div className="relative overflow-hidden w-full" >
+    <div className="hidden sm:block relative overflow-hidden w-full" >
       <div className="absolute inset-0 bg-gradient-to-b from-black-100 to-transparent z-10 pointer-events-none border-t border-neutral-800" />
       <div className="flex gap-4 animate-marquee whitespace-nowrap">
         {images.concat(images).map((image, index) => (
