@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'black-100':"#0a0a0a",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -62,6 +63,7 @@ const config: Config = {
       },
       animation: {
         shimmer: "shimmer 8s infinite",
+        marquee: "marquee 35s linear infinite",
       },
       keyframes: {
         shimmer: {
@@ -71,6 +73,10 @@ const config: Config = {
           "30%, 60%": {
             "background-position": "calc(100% + var(--shimmer-width)) 0",
           },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },
