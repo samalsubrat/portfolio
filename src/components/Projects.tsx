@@ -52,19 +52,21 @@ const Projects = () => {
                 <div className="p-1 rounded-full bg-neutral-700 size-1" />
                 <div className="p-1 rounded-full bg-neutral-700 size-1" />
               </div>
-              <div className="rounded-tr-md rounded-tl-md mt-1.5 overflow-hidden md:h-[180px] lg:h-[250px] xl:h-[300px] 2xl:h-[360px]">
+              <div className="rounded-tr-md rounded-tl-md mt-1.5 overflow-hidden md:h-[180px] lg:h-[250px] xl:h-[300px] 2xl:h-[360px] ">
+                
                 <a href={image.link} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={image.src}
                   width={1584}
                   height={950}
                   alt={image.alt}
-                  className="rounded-tr-sm rounded-tl-sm transform transition-transform duration-400 hover:scale-105"
+                  className="rounded-tr-sm rounded-tl-sm transform transition-transform duration-300 hover:scale-105"
                 />
                 </a>
               </div>
+              <div className="bg-[#2A73B3] h-1 w-[calc(100%+8px)] -ml-1"/>
               <a href={image.link} target="_blank" rel="noopener noreferrer">
-              <div className="flex items-end justify-between p-4 -mx-2 -mb-2 bg-gradient-l from-black-200 to-black-100 rounded-br-md rounded-bl-md hover:bg-gradient-to-r group transition-all duration-300">
+              <div className="flex items-end justify-between p-4 -mx-2 -mb-2  bg-gradient-l from-black-200 to-black-100 rounded-br-md rounded-bl-md hover:bg-gradient-to-r group transition-all duration-300">
                 <div className="mx-1 mb-1">
                   <h1 className="text-2xl font-semibold">{image.title}</h1>
                   <h1 className="text-base font-regular text-neutral-400">

@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import ProjectMarquee from "@/components/ProjectMarquee";
 import Projects from "@/components/Projects";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero/>
       <ProjectMarquee/>
       <Projects/>
+      <About/>
     </>
   );
 }
