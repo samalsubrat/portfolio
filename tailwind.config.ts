@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         "black-100": "#0a0a0a",
         "black-200": "#181818",
-        "black-300": "#0f0f0f",
+        "black-300": "#252525",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -57,6 +57,15 @@ const config: Config = {
       backgroundImage: {
         "custom-gradient":
           "linear-gradient(180deg, rgba(32, 13, 66, 0.00) 0%, #0D3B66 50%, #2A73B3 75%, #6FAFE7 92%)",
+          "gradient-custom":
+          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+      },
+      backgroundSize: {
+        "400%": "400%",
+      },
+      backgroundPosition: {
+        "0-50": "0% 50%",
+        "100-50": "100% 50%",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -67,6 +76,7 @@ const config: Config = {
         shimmer: "shimmer 8s infinite",
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        gradient: "gradient 5s ease infinite",
       },
       keyframes: {
         shimmer: {
@@ -99,7 +109,13 @@ const config: Config = {
             transform: "translateY(calc(-100% - var(--gap)))",
           },
         },
+        gradient: {
+          "0%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0% 50%" },
+        },
       },
+      
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports

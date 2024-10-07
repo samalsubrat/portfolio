@@ -15,10 +15,6 @@ const links = [
     href: "/projects",
   },
   {
-    name: "Services",
-    href: "/services",
-  },
-  {
     name: "Testimonials",
     href: "/testimonials",
   },
