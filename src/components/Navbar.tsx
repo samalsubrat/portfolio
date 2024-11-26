@@ -16,11 +16,11 @@ const links = [
   },
   {
     name: "Testimonials",
-    href: "/testimonials",
+    href: "/#testimonials",
   },
   {
     name: "About",
-    href: "/about",
+    href: "/#about",
   },
 ];
 
@@ -30,7 +30,7 @@ const Navbar = () => {
     <>
       <MaxWidthWrapper>
         <div className="sticky top-0 flex h-16 items-center justify-between gap-4  mb-4">
-          <div className="text-lg font-bold">Subrat</div>
+          <Link href="/" className="text-lg font-bold">Subrat</Link>
           <nav className="hidden md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6 ">
             {links.map((link) => {
               return (
@@ -39,7 +39,7 @@ const Navbar = () => {
                   href={link.href}
                   className={cn(
                     link.href === pathname
-                      ? "text-black hover:text-foreground text-base font-normal transition-all duration-300"
+                      ? "text-white/60 hover:text-foreground text-base font-normal transition-all duration-300"
                       : "text-white/60 hover:text-foreground text-base font-normal transition-all duration-300"
                   )}
                 >
@@ -63,7 +63,7 @@ const Navbar = () => {
                       href={link.href}
                       className={cn(
                         link.href === pathname
-                          ? "text-black hover:text-foreground text-base font-normal transition-all duration-300"
+                          ? "text-white hover:text-foreground text-base font-normal transition-all duration-300"
                           : "text-white/60 hover:text-foreground text-base font-normal transition-all duration-300"
                       )}
                     >

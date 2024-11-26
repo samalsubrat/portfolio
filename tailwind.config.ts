@@ -59,6 +59,10 @@ const config: Config = {
           "linear-gradient(180deg, rgba(32, 13, 66, 0.00) 0%, #0D3B66 50%, #2A73B3 75%, #6FAFE7 92%)",
           "gradient-custom":
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+          "blue-gradient":
+          "linear-gradient(to bottom, transparent 0%, #0D3B66 25%, #2A73B3 65%, transparent 100%)",
+          "blue-gradient-inverted":
+          "linear-gradient(to top, transparent 0%, #0D3B66 40%, #2A73B3 80%)",
       },
       backgroundSize: {
         "400%": "400%",
@@ -122,3 +126,4 @@ const config: Config = {
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
+

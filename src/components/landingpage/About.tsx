@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import MaxWidthWrapper from "./MaxWidthWrapper";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Marquee from "@/components/magicui/marquee";
 import {
@@ -17,6 +17,7 @@ import {
   Mail,
   Calendar,
   Crown,
+  Download,
 } from "lucide-react";
 
 const images = [
@@ -60,8 +61,8 @@ export default function About() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <MaxWidthWrapper className="py-12 sm:py-24">
-      <div className="flex flex-col items-center justify-start overflow-y-auto">
+    <MaxWidthWrapper className="py-12 sm:py-24 ">
+      <div className="flex flex-col items-center justify-start overflow-y-auto" id="about">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight pb-8 sm:pb-16 text-transparent bg-clip-text bg-gradient-to-b from-white to-black-100">
           About Me
         </h1>
@@ -84,10 +85,18 @@ export default function About() {
           </div>
 
           <div
-            className="bg-black-200 rounded-lg lg:col-span-2 lg:row-span-2 relative overflow-hidden h-96 lg:h-auto"
+            className="bg-black-200 rounded-lg lg:col-span-2 lg:row-span-2 overflow-hidden h-96 lg:h-auto relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
+            <div className="rounded-full px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white left-4 top-4 absolute text-sm z-10 flex items-center gap-1">
+              <div className="p-1 rounded-full bg-green-400 size-1" />
+              Available To Work
+            </div>
+            <a href="" target="_blank" className="rounded-md px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white right-4 top-4 absolute text-sm z-10 flex items-center gap-1">
+              Resume <Download className="size-3 text-[#85d2ff]" />
+            </a>
+
             <div
               className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
                 isHovered ? "opacity-0" : "opacity-100"
@@ -139,7 +148,7 @@ export default function About() {
               </p>
             </div>
           </div>
-          
+
           <div className="bg-gradient-custom bg-400% animate-gradient rounded-lg col-span-1 p-5 flex flex-col justify-center items-center space-y-2">
             <div className="bg-black-300 rounded-full p-3">
               <Crown className="text-[#2A73B3]" />
@@ -168,34 +177,33 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 w-full mt-4">
-          <div className="bg-black-200 rounded-lg p-5 lg:p-2 xl:p-5 md:col-span-3 space-y-2 flex flex-col justify-center ">
+          <div className="bg-black-200 rounded-lg p-3 lg:p-2 xl:p-3 md:col-span-3 space-y-2 flex flex-col justify-center ">
             <div className="flex justify-between">
-              <span className="rounded-full px-3 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-sm">
+              <span className="rounded-full px-2 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-[12px]">
                 <MapPin className="size-4 text-[#2A73B3]" />
                 India
               </span>
-              <span className="rounded-full px-3 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-sm">
+              <span className="rounded-full px-2 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-[12px]">
                 <BookA className="size-4 text-[#2A73B3]" />
                 English, Hindi & Odia
               </span>
-              <span className="rounded-full px-3 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-sm">
+              <span className="rounded-full px-2 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-[12px]">
                 <Clock className="size-4 text-[#2A73B3]" />
                 IST | +5:30
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="rounded-full px-3 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-sm">
+              <span className="rounded-full px-2 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-[12px]">
                 <GraduationCap className="size-4 text-[#2A73B3]" />
                 ITER, Siksha O Anusandhan University
               </span>
-              <span className="rounded-full px-3 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-sm">
+              <span className="rounded-full px-2 py-1 bg-black-300 text-neutral-300/80 flex gap-1 items-center w-fit text-[12px]">
                 <ChefHat className="size-4 text-[#2A73B3]" />
                 Foodie
               </span>
             </div>
           </div>
 
-          
           <div className="bg-black-200 rounded-lg py-5 space-y-3 lg:col-span-3 relative flex flex-col justify-evenly">
             <h2 className="text-neutral-300/80 text-sm text-center">
               My Tech Stack
@@ -218,7 +226,7 @@ export default function About() {
               </Marquee>
             </div>
           </div>
-          
+
           <div className="bg-black-200 rounded-lg p-5 lg:col-span-4 text-sm text-neutral-300/80 flex flex-col justify-evenly max-md:mr-0 max-lg:-mr-4">
             <h2 className="text-center items-center mb-4">Fun Facts:</h2>
             <div className="flex flex-wrap justify-around gap-4">

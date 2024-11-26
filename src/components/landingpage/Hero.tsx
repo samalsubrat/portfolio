@@ -1,6 +1,7 @@
 import { AnimatedShinyTextDemo } from "@/components/Button";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -51,7 +52,7 @@ const Hero = () => {
             I blend technical expertise with design to<br />create efficient,
             scalable applications that deliver<br />seamless and engaging user experiences.
           </p>
-          <Button variant="secondary">Show my work</Button>
+          <Link href="#projects"><Button variant="secondary">Show my work</Button></Link>
         </MaxWidthWrapper>
       
         {/* <div className="bg-black rounded-full h-[700px] w-[700px] absolute bottom-0 left-1/2 translate-x-[-50%]"/> */}
