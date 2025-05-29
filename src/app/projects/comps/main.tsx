@@ -1,17 +1,15 @@
 import React from "react";
 import Image from "next/image";
-const images = [
-  { src: "/arion.png", alt: "Arion" },
-  { src: "/casecobra.png", alt: "casecobra" },
-  { src: "/independence.png", alt: "independence" },
-  { src: "/mednex.png", alt: "mednex" },
-];
+import { getProjects } from "@/lib/strapi";
+import { Project } from "@/types/project";
 
-const MainComp = () => {
+const MainComp = async () => {
+  const projects = await getProjects();
+
   return (
     <div className="space-y-4 pb-6 md:py-12">
-      {images.map((image, index) => (
-        <div key={index} className="p-2 rounded-lg border border-neutral-700">
+      {projects.map((project) => (
+        <div key={project.id} className="p-2 rounded-lg border border-neutral-700">
           <div className="flex gap-1">
             <div className="p-1 rounded-full bg-neutral-700 size-1" />
             <div className="p-1 rounded-full bg-neutral-700 size-1" />
@@ -19,10 +17,10 @@ const MainComp = () => {
           </div>
           <div className="rounded-md mt-1 border border-neutral-700 md:max-w-[600px]">
             <Image
-              src={image.src}
+              src={project.image.url}
               width={1280}
               height={720}
-              alt={image.alt}
+              alt={project.image.alt}
               className="rounded-md"
             />
           </div>
