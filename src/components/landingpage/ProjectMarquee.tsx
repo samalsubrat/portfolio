@@ -1,8 +1,7 @@
-"use client";
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import Image from "next/image";
 import Marquee from "@/components/magicui/marquee";
 import { getProjects } from "@/lib/strapi";
-import { Project } from "@/types/project";
 
 const ProjectMarquee = async () => {
   const projects = await getProjects();

@@ -1,11 +1,13 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import { cn } from "@/lib/utils";
+import React from "react";
 
 interface MarqueeProps {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
-  children?: React.ReactNode;
   vertical?: boolean;
+  children?: React.ReactNode;
   repeat?: number;
   [key: string]: any;
 }
@@ -14,8 +16,8 @@ export default function Marquee({
   className,
   reverse,
   pauseOnHover = false,
-  children,
   vertical = false,
+  children,
   repeat = 4,
   ...props
 }: MarqueeProps) {

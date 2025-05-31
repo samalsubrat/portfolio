@@ -1,7 +1,11 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 import path from 'path';
 
-export default ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'sqlite');
+type DatabaseClient = 'mysql' | 'postgres' | 'sqlite';
+
+export default ({ env }: { env: any }) => {
+  const client = env('DATABASE_CLIENT') as DatabaseClient;
 
   const connections = {
     mysql: {

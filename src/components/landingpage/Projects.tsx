@@ -4,7 +4,6 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { getProjects } from "@/lib/strapi";
-import { Project } from "@/types/project";
 
 const Projects = async () => {
   const projects = await getProjects();

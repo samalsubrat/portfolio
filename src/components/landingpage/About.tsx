@@ -2,7 +2,7 @@ import React from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Marquee from "@/components/magicui/marquee";
-import { getAbout, AboutData } from "@/lib/strapi";
+import { getAbout } from "@/lib/strapi";
 import {
   MapPin,
   BookA,
