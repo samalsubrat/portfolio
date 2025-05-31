@@ -13,7 +13,8 @@ export async function getProjects(): Promise<Project[]> {
     }
 
     const data = await response.json();
-    console.log('Strapi Response:', data);
+    console.log('Strapi Response:', JSON.stringify(data, null, 2));
+    console.log('First project data:', JSON.stringify(data.data[0], null, 2));
 
     if (!data.data || !Array.isArray(data.data)) {
       console.error('Unexpected data structure:', data);
@@ -31,6 +32,7 @@ export async function getProjects(): Promise<Project[]> {
         alt: item.Title,
       },
       link: item.Link,
+      GLink: item.GLink || item.github_link || item.githubLink || item.GithubLink,
     }));
   } catch (error) {
     console.error('Error fetching projects:', error);

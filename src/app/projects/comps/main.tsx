@@ -1,15 +1,33 @@
-import React from "react";
+'use client';
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { getProjects } from "@/lib/strapi";
 import { Project } from "@/types/project";
 
-const MainComp = async () => {
-  const projects = await getProjects();
+interface MainCompProps {
+  onProjectSelect: (project: Project) => void;
+}
+
+const MainComp = ({ onProjectSelect }: MainCompProps) => {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const data = await getProjects();
+      setProjects(data);
+    };
+    fetchProjects();
+  }, []);
 
   return (
     <div className="space-y-4 pb-6 md:py-12">
       {projects.map((project) => (
-        <div key={project.id} className="p-2 rounded-lg border border-neutral-700">
+        <div 
+          key={project.id} 
+          className="p-2 rounded-lg border border-neutral-700 hover:border-neutral-600 transition-colors cursor-pointer"
+          onClick={() => onProjectSelect(project)}
+        >
           <div className="flex gap-1">
             <div className="p-1 rounded-full bg-neutral-700 size-1" />
             <div className="p-1 rounded-full bg-neutral-700 size-1" />
@@ -24,6 +42,7 @@ const MainComp = async () => {
               className="rounded-md"
             />
           </div>
+          
         </div>
       ))}
     </div>

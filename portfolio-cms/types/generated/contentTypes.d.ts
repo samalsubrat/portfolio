@@ -389,9 +389,10 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
     Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    'images' | 'files' | 'videos' | 'audios',
+    true
     >;
+    GLink: Schema.Attribute.String;
     Link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

@@ -1,9 +1,15 @@
+'use client';
+
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import React from "react";
+import React, { useState } from "react";
 import MainComp from "./comps/main";
 import Working from "@/components/landingpage/Working";
+import ProjectModal from "./comps/ProjectModal";
+import { Project } from "@/types/project";
 
-const page = () => {
+const Page = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <>
       <MaxWidthWrapper className="md:flex md:justify-between">
@@ -18,15 +24,23 @@ const page = () => {
             A collection of my designs and developments.
           </h1>
         </div>
-        <div className=" md:overflow-y-auto">
-          <MainComp />
+        <div className="md:overflow-y-auto">
+          <MainComp onProjectSelect={setSelectedProject} />
         </div>
       </MaxWidthWrapper>
       <MaxWidthWrapper>
         <Working />
       </MaxWidthWrapper>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          isOpen={true}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </>
   );
 };
 
-export default page;
+export default Page;

@@ -29,6 +29,9 @@
     },
     "Link": {
       "type": "string"
+    },
+    "GLink": {
+      "type": "string"
     }
   }
 }
