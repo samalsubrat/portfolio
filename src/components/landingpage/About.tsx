@@ -1,9 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Marquee from "@/components/magicui/marquee";
+import { getAbout, AboutData } from "@/lib/strapi";
 import {
   MapPin,
   BookA,
@@ -57,71 +56,54 @@ const offerItems = [
   },
 ];
 
-export default function About() {
-  const [isHovered, setIsHovered] = useState(false);
+export default async function About() {
+  const aboutData = await getAbout();
 
   return (
-    <MaxWidthWrapper className="py-12 sm:py-24 ">
+    <MaxWidthWrapper className="pb-12 sm:pb-24 ">
       <div className="flex flex-col items-center justify-start overflow-y-auto" id="about">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight pb-8 sm:pb-16 text-transparent bg-clip-text bg-gradient-to-b from-white to-black-100">
           About Me
         </h1>
-
+        
+        {/* About Me */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 w-full">
           <div className="bg-black-200 rounded-lg p-6 lg:col-span-3 text-base sm:text-lg text-neutral-300/80">
             <p>
-              I am <span className="text-[#85d2ff] opacity-100">Subrat</span>.
-              <br />A designer & CS under-graduate from India.
+              I am <span className="text-[#85d2ff] opacity-100">{aboutData.name}</span>.
+              <br />{aboutData.title}
               <br />
               <br />
-              I blend technical skills with design to create efficient, visually
-              appealing applications. I aim to develop scalable solutions for
-              seamless user experiences.
-              <br />
-              <br />
-              Outside of work, I focus on motion graphics and UI/UX design,
-              constantly honing my skills, and play video games.
+              {aboutData.description.split('\n\n').map((paragraph, index) => (
+                <React.Fragment key={index}>
+                  {paragraph}
+                  <br />
+                </React.Fragment>
+              ))}
             </p>
           </div>
 
+          {/* Image */}
           <div
             className="bg-black-200 rounded-lg lg:col-span-2 lg:row-span-2 overflow-hidden h-96 lg:h-auto relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
           >
             <div className="rounded-full px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white left-4 top-4 absolute text-sm z-10 flex items-center gap-1">
               <div className="p-1 rounded-full bg-green-400 size-1" />
-              Available To Work
+              {aboutData.available ? 'Available To Work' : 'Not Available'}
             </div>
-            <a href="" target="_blank" className="rounded-md px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white right-4 top-4 absolute text-sm z-10 flex items-center gap-1">
-              Resume <Download className="size-3 text-[#85d2ff]" />
-            </a>
+            {aboutData.resume && (
+              <a href={aboutData.resume.url} target="_blank" className="rounded-md px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white right-4 top-4 absolute text-sm z-10 flex items-center gap-1 hover:scale-105 transition-all duration-300">
+                Resume <Download className="size-3 text-[#85d2ff]" />
+              </a>
+            )}
 
-            <div
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                isHovered ? "opacity-0" : "opacity-100"
-              }`}
-            >
+            <div className="absolute top-0 left-0 w-full h-full">
               <Image
-                src="/portraitBW.webp"
-                alt="subrat"
+                src={aboutData.image.url}
+                alt={aboutData.image.alt}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-            {/* Second image (Color) */}
-            <div
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                isHovered ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Image
-                src="/portrait.webp"
-                alt="subrat"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
+                className="rounded-lg hover:saturate-0 transition-all duration-300"
               />
             </div>
           </div>
