@@ -1,4 +1,5 @@
-/* eslint-disable  @typescript-eslint/no-explicit-any */
+"use client";
+
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { X, Github, ExternalLink } from "lucide-react";
@@ -45,7 +46,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
             exit={{ scale: 0.95, y: 20 }}
             transition={{ duration: 0.3 }}
             className="bg-black-200 rounded-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto"
-            onClick={(e: { stopPropagation: () => any; }) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="relative">
               <button
@@ -70,7 +71,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               <p className="text-neutral-400 mb-6">{project.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-6">
-                {project.technologies?.map((tech, index) => (
+                {project.technologies?.map((tech: string, index: number) => (
                   <motion.span
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
