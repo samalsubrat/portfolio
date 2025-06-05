@@ -3,12 +3,12 @@ import React from 'react'
 const aboutLinks = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
-    { href: "/mission", label: "About" },
+    { href: "/#about", label: "About" },
   ]
   
   const educationLinks = [
-    { href: "/github", label: "Github" },
-    { href: "/linkedin", label: "Linkedin" },
+    { href: "http://github.com/samalsubrat/", label: "Github" },
+    { href: "https://www.linkedin.com/in/samalsubrat/", label: "Linkedin" },
   ]
 const FooterContent = () => {
   return (

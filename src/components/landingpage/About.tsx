@@ -160,7 +160,7 @@ export default function About() {
               Let&apos;s make the magic happen
             </p>
             <div className="flex flex-col gap-2 w-full py-2 ">
-              <a href="mailto:samalsubrat919@gmail.com" target="_blank">
+              <a href="mailto:hey@subrat.codes" target="_blank">
                 <div className="bg-black-300 rounded-md p-2 flex gap-2 text-lg items-center justify-center text-neutral-300/80 w-full hover:scale-105 transition-all duration-300 ">
                   <Mail className="text-[#2A73B3]" />
                   Email Me
