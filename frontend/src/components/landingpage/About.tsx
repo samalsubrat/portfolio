@@ -88,7 +88,7 @@ export default async function About() {
             className="bg-black-200 rounded-lg lg:col-span-2 lg:row-span-2 overflow-hidden h-96 lg:h-auto relative"
           >
             <div className="rounded-full px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white left-4 top-4 absolute text-sm z-10 flex items-center gap-1">
-              <div className="p-1 rounded-full bg-green-400 size-1" />
+              <div className={`p-1 rounded-full ${aboutData.available ? 'bg-green-400' : 'bg-red-400'} size-1`} />
               {aboutData.available ? 'Available To Work' : 'Not Available'}
             </div>
             {aboutData.resume && (
