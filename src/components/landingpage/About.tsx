@@ -93,28 +93,13 @@ export default function About() {
               <div className="p-1 rounded-full bg-green-400 size-1" />
               Available To Work
             </div>
-            <a href="Resume.pdf" target="_blank" className="rounded-md px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white right-4 top-4 absolute text-sm z-10 flex items-center gap-1 hover:scale-105 transition-all duration-300">
+            <a href="Resume.pdf" target="_blank" className="rounded-full px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white right-4 top-4 absolute text-sm z-10 flex items-center gap-1 hover:scale-105 transition-all duration-300">
               Resume <Download className="size-3 text-[#85d2ff]" />
             </a>
 
+            
             <div
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                isHovered ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              <Image
-                src="/portraitBW.webp"
-                alt="subrat"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-            {/* Second image (Color) */}
-            <div
-              className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-                isHovered ? "opacity-100" : "opacity-0"
-              }`}
+              className="absolute top-0 left-0 w-full h-full transition-all duration-500 hover:saturate-0"
             >
               <Image
                 src="/portrait.webp"
