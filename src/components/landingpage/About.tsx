@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Marquee from "@/components/magicui/marquee";
@@ -58,7 +56,6 @@ const offerItems = [
 ];
 
 export default function About() {
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <MaxWidthWrapper className="py-12 sm:py-24 ">
@@ -86,8 +83,6 @@ export default function About() {
 
           <div
             className="bg-black-200 rounded-lg lg:col-span-2 lg:row-span-2 overflow-hidden h-96 lg:h-auto relative"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
           >
             <div className="rounded-full px-3 py-0.5 bg-black-200/70 backdrop-blur-md border border-black-300 text-white left-4 top-4 absolute text-sm z-10 flex items-center gap-1">
               <div className="p-1 rounded-full bg-green-400 size-1" />
